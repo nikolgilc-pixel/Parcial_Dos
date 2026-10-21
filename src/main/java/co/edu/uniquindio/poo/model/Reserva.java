@@ -34,8 +34,11 @@ public class Reserva {
             if(transporte)total=total.add(COSTO_TRANSPORTE.multiply(BigDecimal.valueOf(viajeros)));if(seguro)total=total.add(COSTO_SEGURO.multiply(BigDecimal.valueOf(viajeros)));
             if(guia!=null)total=total.add(guia.calcularCosto(producto.obtenerDuracionHoras()));return total.setScale(0,java.math.RoundingMode.HALF_UP);
         }
-        public Cliente getCliente(){return cliente;}
-    public IProductoTuristico getProducto(){return producto;
+        public Cliente getCliente(){
+            return cliente;
+        }
+    public IProductoTuristico getProducto(){
+            return producto;
         }
         public LocalDate getFechaViaje(){
             return fechaViaje;
