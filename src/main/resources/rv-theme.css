@@ -1,0 +1,239 @@
+* {
+    -rv-ink: #20312a;
+    -rv-muted: #65756d;
+    -rv-green: #236b4c;
+    -rv-green-dark: #174d37;
+    -rv-border: #d9e3dc;
+    -rv-paper: #ffffff;
+    -fx-font-family: "Segoe UI";
+}
+
+.root {
+    -fx-background-color: #f3f6f2;
+    -fx-font-size: 14px;
+}
+
+.page-background,
+.app-shell {
+    -fx-background-color: #f3f6f2;
+}
+
+.app-topbar {
+    -fx-alignment: center-left;
+    -fx-spacing: 16px;
+    -fx-padding: 14px 24px;
+    -fx-background-color: #173f31;
+}
+
+.app-topbar .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.login-background {
+    -fx-background-color: linear-gradient(to bottom right, #173f31, #608665);
+}
+
+.login-card,
+.surface-card,
+.metric-card,
+.report-results {
+    -fx-background-color: -rv-paper;
+    -fx-background-radius: 16px;
+    -fx-border-color: -rv-border;
+    -fx-border-radius: 16px;
+    -fx-padding: 18px;
+    -fx-effect: dropshadow(gaussian, rgba(24, 53, 39, 0.09), 16, 0.12, 0, 4);
+}
+
+.login-card {
+    -fx-padding: 40px;
+}
+
+.brand-mark {
+    -fx-text-fill: -rv-green-dark;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.brand-region,
+.metric-caption,
+.hero-pill {
+    -fx-text-fill: -rv-green;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.login-tagline,
+.section-title,
+.guide-title {
+    -fx-text-fill: -rv-ink;
+    -fx-font-size: 23px;
+    -fx-font-weight: bold;
+}
+
+.section-title {
+    -fx-font-size: 20px;
+}
+
+.guide-title {
+    -fx-font-size: 27px;
+}
+
+.muted,
+.hero-copy,
+.guide-subtitle,
+.demo-hint {
+    -fx-text-fill: -rv-muted;
+}
+
+.demo-hint {
+    -fx-font-size: 12px;
+    -fx-background-color: #f1f5f1;
+    -fx-background-radius: 8px;
+    -fx-padding: 10px;
+}
+
+.primary-button,
+.secondary-button {
+    -fx-background-radius: 9px;
+    -fx-padding: 10px 16px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.primary-button {
+    -fx-background-color: -rv-green;
+    -fx-text-fill: white;
+}
+
+.primary-button:hover {
+    -fx-background-color: -rv-green-dark;
+}
+
+.secondary-button {
+    -fx-background-color: #edf3ee;
+    -fx-text-fill: -rv-green-dark;
+    -fx-border-color: #c8d8cc;
+    -fx-border-radius: 9px;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #dce9df;
+}
+
+.text-field,
+.password-field,
+.text-area,
+.combo-box,
+.date-picker,
+.spinner {
+    -fx-background-color: white;
+    -fx-border-color: -rv-border;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 7px 9px;
+}
+
+.text-field:focused,
+.password-field:focused,
+.text-area:focused,
+.combo-box:focused,
+.date-picker:focused,
+.spinner:focused {
+    -fx-border-color: -rv-green;
+}
+
+.tab-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color: transparent;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #e8eee9;
+    -fx-background-radius: 8px 8px 0 0;
+    -fx-padding: 7px 12px;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: white;
+}
+
+.table-view,
+.list-view {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-color: -rv-border;
+    -fx-border-radius: 10px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #eaf1eb;
+    -fx-background-radius: 10px 10px 0 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: -rv-green-dark;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:selected,
+.list-cell:selected {
+    -fx-background-color: #dbeadf;
+    -fx-text-fill: -rv-ink;
+}
+
+.client-hero,
+.guide-hero,
+.dashboard-hero {
+    -fx-background-color: linear-gradient(to right, #e4eee4, #f4f7ef);
+    -fx-background-radius: 16px;
+    -fx-padding: 22px;
+}
+
+.hero-pill,
+.price-badge {
+    -fx-background-color: #e4f0e5;
+    -fx-background-radius: 20px;
+    -fx-padding: 6px 11px;
+}
+
+.product-detail,
+.price-badge,
+.status-bar {
+    -fx-text-fill: -rv-green-dark;
+    -fx-background-color: #eff5ef;
+    -fx-background-radius: 8px;
+    -fx-padding: 10px;
+}
+
+.metric-value {
+    -fx-text-fill: -rv-green-dark;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.metric-sage { -fx-border-color: #8aa98d; }
+.metric-blue { -fx-border-color: #8aa8b5; }
+.metric-green { -fx-border-color: #5f9670; }
+.metric-plum { -fx-border-color: #aa8ca6; }
+.metric-pewter { -fx-border-color: #9ba9a1; }
+
+.status-wrap {
+    -fx-alignment: center-left;
+    -fx-spacing: 12px;
+    -fx-padding: 10px 16px;
+    -fx-background-color: white;
+    -fx-border-color: -rv-border transparent transparent transparent;
+}
+
+.error-message {
+    -fx-text-fill: #a83b35;
+}
+
+.signup-link {
+    -fx-text-fill: -rv-green;
+}
+
+.check-box {
+    -fx-text-fill: -rv-ink;
+}

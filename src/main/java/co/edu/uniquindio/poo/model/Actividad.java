@@ -19,7 +19,8 @@ public class Actividad implements IProductoTuristico {
                      Dificultad dificultad,EstadoActividad estado) {
         if(codigo==null||codigo.isBlank()||nombre==null||nombre.isBlank())
             throw new IllegalArgumentException("Código y nombre obligatorios");
-        if(duracionHoras<=0||precio<0||cupo<1)
+        if(!Double.isFinite(duracionHoras)||!Double.isFinite(precio)
+                ||duracionHoras<=0||precio<0||cupo<1)
             throw new IllegalArgumentException("Duración, precio o cupo inválido");
         this.codigo=codigo.trim();this.nombre=nombre.trim();this.municipio= Objects.requireNonNull(municipio);
         this.duracionHoras=duracionHoras;
@@ -64,10 +65,12 @@ public class Actividad implements IProductoTuristico {
     private int cuposMaximoRestante(LocalDate fecha){
         return cupoMaximoPorDia-cuposUsados.getOrDefault(fecha,0);}
     public synchronized void actualizarCupos(LocalDate fecha,int cantidad){
-        if(cantidad<0||cuposMaximoRestante(fecha)<cantidad)
-            throw new IllegalStateException("No hay cupos suficientes para "+nombre+" el "+fecha);cuposUsados.merge(fecha,cantidad,Integer::sum);
+        if(fecha==null||cantidad<1||cuposMaximoRestante(fecha)<cantidad)
+            throw new IllegalStateException("No hay cupos suficientes para "+nombre+" el "+fecha);
+        cuposUsados.merge(fecha,cantidad,Integer::sum);
     }
     public synchronized void liberarCupos(LocalDate fecha,int cantidad){
+        if(fecha==null||cantidad<1)throw new IllegalArgumentException("La fecha y la cantidad de cupos deben ser válidas");
         int quedan=cuposUsados.getOrDefault(fecha,0)-cantidad;
         if(quedan<=0)cuposUsados.remove(fecha);
         else cuposUsados.put(fecha,quedan);

@@ -60,6 +60,9 @@ public class PaqueteTuristico implements IProductoTuristico{
     }
     public synchronized void actualizarCupos(LocalDate fecha, int cantidad){
         List<Actividad> actividades=listarActividades();if(!verificarDisponibilidad(fecha,cantidad))throw new IllegalStateException("No hay cupos para todas las actividades del paquete");List<Actividad> actualizadas=new ArrayList<>();try{for(Actividad actividad:actividades){actividad.actualizarCupos(fecha,cantidad);actualizadas.add(actividad);}}catch(RuntimeException e){actualizadas.forEach(a->a.liberarCupos(fecha,cantidad));throw e;}}
+    public synchronized void liberarCupos(LocalDate fecha, int cantidad){
+        listarActividades().forEach(actividad -> actividad.liberarCupos(fecha, cantidad));
+    }
     public IProductoTuristico clonar(){PaqueteTuristico copia=new PaqueteTuristico(codigo+"-COPIA",nombre,descuentoPorcentaje);productos.forEach(p->copia.productos.add(p.clonar()));return copia;}
     @Override public String toString(){return nombre+" — $"+String.format("%,.0f",obtenerPrecio())+" por persona";}
 }

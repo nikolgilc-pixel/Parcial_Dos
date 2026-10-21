@@ -10,5 +10,6 @@ public interface IProductoTuristico {
     List<Actividad> listarActividades();
     boolean verificarDisponibilidad(LocalDate fecha, int cantidad);
     void actualizarCupos(LocalDate fecha, int cantidad);
+    void liberarCupos(LocalDate fecha, int cantidad);
     IProductoTuristico clonar();
 }

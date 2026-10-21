@@ -1,3 +1,5 @@
+package co.edu.uniquindio.poo.model;
+
 import co.edu.uniquindio.poo.model.IPasarelaPago;
 import co.edu.uniquindio.poo.model.PagoAndinoAPI;
 import co.edu.uniquindio.poo.model.ResultadoPago;
